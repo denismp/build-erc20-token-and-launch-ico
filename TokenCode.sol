@@ -159,7 +159,6 @@ contract HashnodeTestCoin is StandardToken { // CHANGE THIS. Update the contract
         //receiveApproval(address _from, uint256 _value, address _tokenContract, bytes _extraData)
         //it is assumed that when does this that the call *should* succeed, otherwise one would use vanilla approve instead.
         //if(!_spender.call(bytes4(bytes32(sha3("receiveApproval(address,uint256,address,bytes)"))), msg.sender, _value, this, _extraData)) { revert(); }
-        //fundsWallet.transfer(_value); // I am not sure if this is appropriate
         msg.sender.transfer(_value);
         emit Approval(msg.sender, _spender, _value);
 
